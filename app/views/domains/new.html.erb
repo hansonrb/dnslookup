@@ -1,0 +1,7 @@
+<%= form_tag("/domains", method: "post") do %>
+<div class="form-group">
+    <%= label_tag(:domain_list, "Example textarea") %>
+    <%= text_area_tag(:domain_list, nil, { rows: 10, class: 'form-control'}) %>
+  </div>
+  <%= submit_tag("Save", { class: 'btn btn-info'}) %>
+<% end %>
