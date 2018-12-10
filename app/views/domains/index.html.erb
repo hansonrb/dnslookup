@@ -14,6 +14,9 @@
       <td><%= domain.name %></td>
       <td><%= domain.is_office365 ? 'Yes' : 'No' %></td>
       <td>
+        <%= link_to process_dns_domain_path(domain), method: :post do %>
+          Process
+        <% end %>&nbsp;&nbsp;
         <%= link_to edit_domain_path(domain), method: :get do %>
           Edit
         <% end %>&nbsp;&nbsp;

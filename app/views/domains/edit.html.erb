@@ -1,0 +1,23 @@
+<%= form_tag("/domains/" + @domain.id.to_s, method: "patch") do %>
+  <div class="form-group mb-2">
+    <%= label_tag(:name, "Domain Name") %>
+    <%= text_field_tag(:name, @domain.name, { class: 'form-control'}) %>
+  </div>
+  <div class="mb-2">
+    Is Office 365? : <%= @domain.is_office365 ? 'Yes' : 'No' %>
+  </div>
+  <div class="form-group mb-2">
+    <label>Raw DNS Response</label>
+    <pre><%= @domain.raw_dns.strip %></pre>
+  </div>
+
+  <div class="mb-2">
+    <%= link_to process_dns_domain_path(@domain), method: :post do %>
+      <button class="btn btn-warning">Process Again</button>
+    <% end %>
+    <%= submit_tag("Save", { class: 'btn btn-success'}) %>
+    <%= link_to domains_path do %>
+      <button class="btn btn-light">Back</button>
+    <% end %>
+  </div>
+<% end %>
