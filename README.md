@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is for adding list of domains and it checks DNS records to guess whether domain is using office 365
 
-Things you may want to cover:
+# RUN
 
-* Ruby version
+You need to have Postgresql
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`rake db:create`
+`rake db:migrate`
+`rails s`
