@@ -23,7 +23,7 @@ class Domain < ApplicationRecord
     end
 
     needle = Regexp.new(
-      Regexp.escape(name) + "\\.\\s+\\d+\\s+IN\\s+\\w+\\s+([^\\s]+)", Regexp::MULTILINE
+      Regexp.escape(name) + "\\.\\s+\\d+\\s+IN\\s+\\w+\\s+([^\\n]+)", Regexp::MULTILINE | Regexp::IGNORECASE
     )
 
     self.is_office365 = false

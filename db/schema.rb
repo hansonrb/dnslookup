@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_12_07_174925) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "domains", force: :cascade do |t|
     t.string "name"
     t.boolean "is_office365"
